@@ -9,13 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('barangs', function (Blueprint $table) {
             $table->id();
+            $table->string('nama'); // Tambahkan kolom nama
+            $table->integer('stok'); // Tambahkan kolom stok
+            $table->decimal('harga', 10, 2); // Tambahkan kolom harga
             $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.
