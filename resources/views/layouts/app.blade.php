@@ -29,8 +29,23 @@
 
             <!-- Page Content -->
             <main>
-                {{ $slot }}
+                @yield('content')
             </main>
         </div>
+        <div class="container">
+        <h1>Welcome to Dashboard</h1>
+        
+        <!-- Tombol Daftar Barang -->
+        <a href="{{ route('barang.index') }}" class="btn btn-primary">Daftar Barang</a>
+
+        <!-- Tombol Lainnya -->
+        <a href="{{ route('transaksi.index') }}" class="btn btn-secondary">Transaksi</a>
+        <a href="{{ route('laporan.index') }}" class="btn btn-success">Laporan</a>
+        
+        @yield('content')
+    </div>
+</body>
+</html>
+
     </body>
 </html>

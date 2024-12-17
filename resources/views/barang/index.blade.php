@@ -1,37 +1,31 @@
-@extends('layouts.app')
-
-@section('title', 'Kelola Barang')
-
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Barang</title>
+</head>
+<body>
     <h1>Daftar Barang</h1>
-    <a href="{{ route('barang.create') }}" class="btn btn-success mb-3">Tambah Barang</a>
-    <table class="table">
+    <table border="1">
         <thead>
             <tr>
-                <th>#</th>
+                <th>ID</th>
                 <th>Nama Barang</th>
                 <th>Stok</th>
                 <th>Harga</th>
-                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($barang as $item)
+            @foreach ($barangs as $barang)
                 <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $item->nama }}</td>
-                    <td>{{ $item->stok }}</td>
-                    <td>{{ $item->harga }}</td>
-                    <td>
-                        <a href="{{ route('barang.edit', $item->id) }}" class="btn btn-warning">Edit</a>
-                        <form action="{{ route('barang.destroy', $item->id) }}" method="POST" style="display:inline-block;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Hapus</button>
-                        </form>
-                    </td>
+                    <td>{{ $barang->id }}</td>
+                    <td>{{ $barang->nama }}</td>
+                    <td>{{ $barang->stok }}</td>
+                    <td>{{ $barang->harga }}</td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-@endsection
+</body>
+</html>

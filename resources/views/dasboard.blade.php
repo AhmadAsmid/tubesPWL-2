@@ -1,15 +1,32 @@
-<!-- resources/views/dashboard.blade.php -->
-@extends('layouts.app') <!-- Menggunakan layout yang sudah ada -->
+@extends('layouts.app')
+
+@section('title', 'Dashboard')
 
 @section('content')
-    <div class="container">
-        <h1>Welcome to your Dashboard</h1>
-        <p>Here you can manage your transactions, view reports, and more.</p>
-        
-        <!-- Tampilkan informasi terkait pengguna -->
-        <div>
-            <h3>Hello, {{ Auth::user()->name }}!</h3>
-            <p>Your role: {{ Auth::user()->role }}</p>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Total Transaksi</h5>
+                    <p class="card-text">Rp 50,000,000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Barang Tersedia</h5>
+                    <p class="card-text">120 Barang</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Cabang</h5>
+                    <p class="card-text">5 Cabang</p>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
